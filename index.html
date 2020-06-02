@@ -1,0 +1,91 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>스트림스 게임 번호 추첨</title>
+  </head>
+
+
+  <body>
+    <div style = "text-align:center;">
+    <h1 style = "text-align:center; color:blue;">스트림스 게임 번호 추첨</h1>
+
+    <input type="button" value="  추첨 번호 발생하기  " onclick="makenum()"
+                         style = "text-align:center; font-size:40px;
+                         box-shadow: 0 0 4px 4px rgba(0,0,0,0.2), 0px 0px 0px 0px rgba(0,0,0,0.19);
+                         border-radius: 5px;"><br><br>
+    <input type="button" value="    번호 뽑기    " onclick="choosenum()"
+                         style = "text-align:center; font-size:60px; color:red;
+                         box-shadow: 0 0 4px 4px rgba(0,0,0,0.2), 0px 0px 0px 0px rgba(0,0,0,0.19);
+                         border-radius: 5px;"><br><br>
+    <input type="text" id="cnumber" name="cnumber" value = "선택된 수"
+                         style = "text-align:center; font-size:200px; width:100%;
+                         border-width: 5px;"><br><br>
+    <input type="text" id="cnums" name="cnums"
+                         style = "font-size:30px; width:100%;">
+    </div>
+    <div style ="font-size:12px;">
+      <br><br>
+      made by CHD, 2020.
+    </div>
+
+    <script>
+
+      var allnum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15, 16, 16, 17, 17, 18, 18, 19, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
+      var chosennum = [];
+      var chosennumbers = [];
+      var howmany = 0;
+      var cnum = "";
+
+      function makenum(){
+          chosennum = [];
+          chosennumbers = [];
+          howmany = 0;
+          cnum = "";
+          document.getElementById("cnumber").value = "";
+          document.getElementById("cnums").value = "";
+
+          var randomnum;
+            var i = 0;
+            while(i < 20) {
+
+              var rand = Math.random();
+              randomnum = Math.floor(rand * 39);
+
+
+              var j = 0;
+              var k = 0;
+              for(j = 0; j < i; j++){
+                if (chosennum[j] === randomnum){
+                  k = k + 1;
+                }
+              }
+              if (k === 0){
+                chosennum[i] = randomnum;
+                chosennumbers[i] = allnum[randomnum];
+                i = i + 1;
+              }
+
+            }
+        }
+
+        function choosenum(){
+          if(howmany < 20){
+
+            document.getElementById("cnumber").value = (howmany+1) + " : " + chosennumbers[howmany];
+            if(howmany<19){
+              cnum = cnum + chosennumbers[howmany] + ",  ";
+            } else {
+              cnum = cnum + chosennumbers[howmany]
+            }
+            document.getElementById("cnums").value = cnum;
+            howmany = howmany + 1;
+
+          }
+
+        }
+
+
+    </script>
+
+  </body>
+</html>
