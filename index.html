@@ -13,13 +13,13 @@
                          style = "text-align:center; font-size:40px;
                          box-shadow: 0 0 4px 4px rgba(0,0,0,0.2), 0px 0px 0px 0px rgba(0,0,0,0.19);
                          border-radius: 5px;"><br><br><br>
-    <input type="text" id="cnumber" name="cnumber" value = "선택된 번호"
+    <input type="text" id="cnumber" name="cnumber" value = "추첨된 번호"
                          style = "text-align:center; font-size:200px; width:100%;
                          border-width: 5px;"><br><br>
-    <input type="text" id="cnums" name="cnums" value = "여기에는 선택된 번호들이 차례로 표시됩니다."
+    <input type="text" id="cnums" name="cnums" value = "여기에는 추첨된 번호들이 차례로 표시됩니다."
                          style = "font-size:25px; width:100%;
                          border-radius: 8px; border-width: 3px;"><br><br><br>
-    <input type="button" value="    번호 뽑기    " onclick="choosenum()"
+    <input type="button" value="    번호 추첨    " onclick="choosenum()"
                          style = "text-align:center; font-size:80px; color:red;
                          box-shadow: 0 0 4px 4px rgba(0,0,0,0.2), 0px 0px 0px 0px rgba(0,0,0,0.19);
                          border-radius: 5px;"><br><br>
@@ -41,7 +41,7 @@
           chosennum = [];
           chosennumbers = [];
           howmany = 0;
-          cnum = "선택된 번호들 : ";
+          cnum = "된 번호들 : ";
           document.getElementById("cnumber").value = "";
           document.getElementById("cnums").value = "";
 
